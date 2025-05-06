@@ -142,3 +142,20 @@ while game_status:
         update_score()
         ball.goto(0, 0)
         bounce_x()
+
+    if score_paddle1 >=10 or score_paddle2 >=10:
+        game_status = False
+        game_over = Turtle()
+        game_over.color("white")
+        game_over.penup()
+        game_over.hideturtle()
+        game_over.write("GAME OVER", align="center", font=("Arial", 30, "bold"))
+        game_over.goto(-130, -50)
+        if score_paddle1 > score_paddle2:
+            game_over.write("Player 1 WON", font=("Arial", 30, "bold"))
+        if score_paddle2 > score_paddle1:
+            game_over.write("Player 2 WON",font=("Arial", 30, "bold"))
+
+
+
+screen.exitonclick()
